@@ -23,7 +23,11 @@ class PsiEncoder(json.JSONEncoder):
 from sentence_transformers import SentenceTransformer
 import torch
 
-st.set_page_config(layout="wide")
+st.set_page_config(
+    page_title="Ψ LAB v2.1 — Semantic Stress Analyzer",
+    page_icon="🧠",                                    
+    layout="wide"                                      
+)
 
 # =========================
 # 🎨 STYLE (DARK TERMINAL)

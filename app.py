@@ -122,8 +122,6 @@ def encode(t):
 # =========================
 st.markdown("## 🧪 Stress Test Scenarios")
 
-para mi herramienta Ψ LAB v2.1 — Semantic Stress Analyzer 🧠⚡ tengo este arreglo, pero no induce suficiente estress, quisiera textos mas extensos y conflictivos, no sé, agrega, quiero bastantates:
-
 scenarios = {
     "Stable_Equilibrium": {
         "text": (

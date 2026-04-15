@@ -367,11 +367,15 @@ for p in processed:
 # =========================
 # EXPORT
 # =========================
+ if texts:
+    data = export_json(texts, temp)
+    
+    # 🔥 USA EL ENCODER AQUÍ:
     json_string = json.dumps(data, indent=2, cls=PsiEncoder)
     
     st.download_button(
         label="⬇ Export Semantic Report",
         data=json_string,
         file_name="psi_lab_report.json",
-        mime="application/json" 
+        mime="application/json" # Es buena práctica definir el tipo de archivo
     )

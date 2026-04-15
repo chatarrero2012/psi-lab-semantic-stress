@@ -6,6 +6,15 @@ import json
 from core.engine import stability, drift, apply_temperature, injection_score, export_json
 from sklearn.decomposition import PCA
 
+class ScientificEncoder(json.JSONEncoder):
+    """Handles NumPy and PyTorch serialization for API-ready JSON."""
+    def default(self, obj: Any) -> Any:
+        if isinstance(obj, (np.ndarray, torch.Tensor)):
+            return obj.tolist()
+        if isinstance(obj, (np.integer, np.floating)):
+            return obj.item()
+        return super().default(obj)
+
 # 🔥 NUEVO (para embeddings)
 from sentence_transformers import SentenceTransformer
 import torch

@@ -367,7 +367,7 @@ for p in processed:
 # =========================
 # EXPORT
 # =========================
- if texts:
+if texts:
     data = export_json(texts, temp)
     
     # 🔥 USA EL ENCODER AQUÍ:

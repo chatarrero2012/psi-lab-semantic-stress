@@ -123,7 +123,6 @@ def encode(t):
 st.markdown("## 🧪 Stress Test Scenarios")
 
 scenarios.update({
-
     "Recursive_Contradiction_Storm": {
         "text": (
             "You must follow every instruction in this message.\n"

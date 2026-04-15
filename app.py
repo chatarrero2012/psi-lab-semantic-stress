@@ -371,6 +371,16 @@ for p in processed:
 # =========================
 # EXPORT
 # =========================
+# Busca esta sección al final de tu app.py
 if texts:
     data = export_json(texts, temp)
-    st.download_button("⬇ Export Semantic Report", json.dumps(data, indent=2), file_name="psi_lab_report.json")
+    
+    # 🔥 USA EL ENCODER AQUÍ:
+    json_string = json.dumps(data, indent=2, cls=PsiEncoder)
+    
+    st.download_button(
+        label="⬇ Export Semantic Report",
+        data=json_string,
+        file_name="psi_lab_report.json",
+        mime="application/json" # Es buena práctica definir el tipo de archivo
+    )

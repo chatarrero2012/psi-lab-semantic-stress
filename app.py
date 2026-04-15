@@ -10,6 +10,19 @@ from sklearn.decomposition import PCA
 from sentence_transformers import SentenceTransformer
 import torch
 
+class PsiEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, np.ndarray):
+            return obj.tolist()  # Convierte arrays de NumPy a listas
+        if isinstance(obj, torch.Tensor):
+            return obj.detach().cpu().numpy().tolist() # Convierte Tensores a listas
+        if isinstance(obj, np.integer):
+            return int(obj)
+        if isinstance(obj, np.floating):
+            return float(obj)
+        return super().default(obj)
+st.set_page_config(layout="wide")
+
 st.set_page_config(layout="wide")
 
 # =========================

@@ -383,3 +383,18 @@ if texts:
         file_name="psi_lab_report.json",
         mime="application/json" # Es buena práctica definir el tipo de archivo
     )
+# =========================
+# 👣 FOOTER
+# =========================
+st.markdown("""
+<hr style="border: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(76,201,240,0.3), transparent); margin-top: 4rem; margin-bottom: 2rem;">
+<div style="text-align: center; color: #e6edf3; font-family: 'Inter', sans-serif; padding-bottom: 2rem;">
+    <span style="background: linear-gradient(90deg, #4cc9f0, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; font-family: monospace;">Ψ LAB v2.1</span> 
+    <span style="color: #a78bfa;">|</span> 
+    Developed by <strong style="color: #4cc9f0;">Davit Ortiz</strong><br>
+    <span style="color: #8b949e; font-size: 0.9rem;">AI Product Builder & LLM Systems Analyst</span><br>
+    <span style="color: #8b949e; font-size: 0.9rem;">📍 Bogotá, Colombia</span><br><br>
+    <a href="mailto:tu-correo@email.com" style="color: #4cc9f0; text-decoration: none; font-size: 0.85rem; margin: 0 10px;">📧 Contact</a>
+    <a href="https://github.com/tu-usuario" target="_blank" style="color: #a78bfa; text-decoration: none; font-size: 0.85rem; margin: 0 10px;">🐙 GitHub</a>
+</div>
+""", unsafe_allow_html=True)

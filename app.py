@@ -10,19 +10,6 @@ from sklearn.decomposition import PCA
 from sentence_transformers import SentenceTransformer
 import torch
 
-class PsiEncoder(json.JSONEncoder):
-    def default(self, obj):
-        if isinstance(obj, np.ndarray):
-            return obj.tolist()  # Convierte arrays de NumPy a listas
-        if isinstance(obj, torch.Tensor):
-            return obj.detach().cpu().numpy().tolist() # Convierte Tensores a listas
-        if isinstance(obj, np.integer):
-            return int(obj)
-        if isinstance(obj, np.floating):
-            return float(obj)
-        return super().default(obj)
-st.set_page_config(layout="wide")
-
 st.set_page_config(layout="wide")
 
 # =========================
@@ -371,16 +358,6 @@ for p in processed:
 # =========================
 # EXPORT
 # =========================
-# Busca esta sección al final de tu app.py
 if texts:
     data = export_json(texts, temp)
-    
-    # 🔥 USA EL ENCODER AQUÍ:
-    json_string = json.dumps(data, indent=2, cls=PsiEncoder)
-    
-    st.download_button(
-        label="⬇ Export Semantic Report",
-        data=json_string,
-        file_name="psi_lab_report.json",
-        mime="application/json" # Es buena práctica definir el tipo de archivo
-    )
+    st.download_button("⬇ Export Semantic Report", json.dumps(data, indent=2), file_name="psi_lab_report.json")
